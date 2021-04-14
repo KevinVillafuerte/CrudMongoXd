@@ -1,0 +1,130 @@
+<% include partials/_header %>
+<div class="container mt-2 ">
+  <section class="row">
+    <main class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-8">
+      <!--Borrar a partir de aqui-->
+      <div class="card mb-2">
+        <div class="card-body ">
+          <div class="row ">
+            <div class="col-12">
+              <form action="/addca" method="POST">
+                <div class="tab-content">
+                  <div id="carrera" class="container tab-pane active">
+                    <div class="card-header">
+                      <h3 class="text-center">Calificaciones </h3>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="">Carrera: </label>
+                      <select name="NombreCarrera" class="form-control">
+                      <option value="">Seleccionar</option>
+                      <% for(var i=0; i< tasks17.length; i++){ %>
+                      <option value="<%= tasks17[i].NombreCarrera %>"><%= tasks17[i].NombreCarrera %></option>
+                      <% }%>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="">Alumno: </label>
+                      <select name="Nombre" class="form-control">
+                      <option value="">Seleccionar</option>
+                      <% for(var i=0; i< tasks16.length; i++){ %>
+                      <option value="<%= tasks16[i].Nombre %>"><%= tasks16[i].Nombre %></option>
+                      <% }%>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="">Nombre Asignatura: </label>
+                      <select name="NombreAsignatura" class="form-control">
+                      <option value="">Seleccionar</option>
+                      <% for(var i=0; i< tasks14.length; i++){ %>
+                      <option value="<%= tasks14[i].NombreAsignatura %>"><%= tasks14[i].NombreAsignatura %></option>
+                      <% }%>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="">Numero unidad: </label>
+                      <select name="NumUnidad" class="form-control">
+                      <option value="">Seleccionar</option>
+                      <% for(var i=0; i< tasks15.length; i++){ %>
+                      <option value="<%= tasks15[i].NumUnidad %>"><%= tasks15[i].NombreUnidad %></option>
+                      <% }%>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Calificaion Ordinaria : </label>
+                        <input type="number" placeholder="Calificacion" name="CalifOrdinaria" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Calificacion R1 : </label>
+                        <input type="number" placeholder="Horas Unidad Semana" name="R1" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Calificacion R2 : </label>
+                        <input type="number" placeholder="Horas Unidad Semana" name="R2" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Calificacion Global : </label>
+                        <input type="number" placeholder="Horas Unidad Semana" name="Global" class="form-control">
+                    </div>
+                      <button type="submit" class="nav-link page-link">Agregar</button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!--Ultima linea de borrado-->
+        <div class="col-md-7">
+            <div class="table-responsive">
+              <table class="table table-bordered table-dark">
+                <thead>
+                  <tr>
+                    <th>N°</th>
+                    <th>Nombre Carrera</th>
+                    <th>Nombre Alumno</th>
+                    <th>Nombre Asignatura</th>
+                    <th>Numero de Undiad</th>
+                    <th>Calificacion Ordinaria</th>
+                    <th>Calificaion R1</th>
+                    <th>Calificacion R2</th>
+                    <th>Global</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for(var i=0; i < tasks.length; i++) { %>
+                  <tr>
+                    <td><%= i + 1%></td>
+                    <td> <%= tasks[i].NombreCarrera %> </td>
+                    <td> <%= tasks[i].Nombre %> </td>
+                    <td><%= tasks[i].NombreAsignatura %></td>
+                    <td><%= tasks[i].NumUnidad %></td>
+                    <td><%= tasks[i].CalifOrdinaria %></td>
+                    <td><%= tasks[i].R1 %></td>
+                    <td><%= tasks[i].R2 %></td>
+                    <td><%= tasks[i].Global %></td>
+                    <td>
+                      <a href="/deleteca/<%= tasks[i]._id %>" class="btn btn-danger">
+                        Eliminar
+                      </a>
+                    </td>
+                    <td>
+                      <a href="/editca/<%= tasks[i]._id %>" class="btn btn-info">
+                        Actualizar
+                      </a>
+                    </td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </main>
+  </section>
+</div>
+<% include partials/_footer %>

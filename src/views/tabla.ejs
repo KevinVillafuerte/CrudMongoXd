@@ -1,0 +1,58 @@
+<% include partials/_header %>
+<div class="conteiner">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+      <br>
+      <br>
+    </div>
+    <div class="col-md-7">
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-dark">
+          <thead>
+            <tr>
+              <th>N°</th>
+              <th>Matricula del Alumno</th>
+              <th>Nombre</th>
+              <th>Apellido Paterno</th>
+              <th>Apellido Materno</th>
+              <th>Telefono</th>
+              <th>Dirección</th>
+              <th>Correo electronico</th>
+              <th>Cuatrimestre</th>
+              <th>Carrera</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0; i < tasks.length; i++) { %>
+            <tr>
+              <td><%= i + 1%></td>
+              <td> <%= tasks[i].matriculaAlum %> </td>
+              <td><%= tasks[i].Nombre %></td>
+              <td> <%= tasks[i].ApePaterno %> </td>
+              <td><%= tasks[i].ApeMaterno %></td>
+              <td> <%= tasks[i].telefono %> </td>
+              <td> <%= tasks[i].Direccion %></td>
+              <td> <%= tasks[i].Email %> </td>
+              <td><%= tasks[i].CuatrimestreAct %></td>
+              <td> <%= tasks[i].NombreCarrera %> </td>
+              <td>
+                <a href="/delete/<%= tasks[i]._id %>" class="btn btn-danger">
+                  Eliminar
+                </a>
+              </td>
+              <td>
+                <a href="/edit/<%= tasks[i]._id %>" class="btn btn-info">
+                  Actualizar
+                </a>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>

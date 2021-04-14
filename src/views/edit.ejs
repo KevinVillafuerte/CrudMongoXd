@@ -1,0 +1,79 @@
+<% include partials/_header %>
+<div class="container">
+  <div class="row">
+    <!--FORM-->
+    <div class="col-md-5 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <form action="/edit/<%= task._id %>" method="post">
+            <div class="tab-content">
+              <div id="usuario" class="container tab-pane active">
+                <div class="card-header">
+                  <h3 class="text-center">Datos del usuario</h3>
+                </div>
+                <div class="form-group">
+                  <label for="">Numero de Matricula: </label>
+                  <input disabled type="text" placeholder="Ingresa tu numero de Matricula" name="matriculaAlum"
+                    class="form-control" value="<%= task.matriculaAlum %>">
+                </div>
+                <div class="form-group">
+                  <label for="">Nombre: </label>
+                  <input disabled type="text" placeholder="Ingresa tu nombre" name="Nombre" class="form-control"
+                  value="<%= task.Nombre %>">
+                </div>
+                <div class="form-group">
+                  <label for="">Apellido Paterno: </label>
+                  <input disabled type="text" placeholder="Apellido Paterno" name="ApePaterno" class="form-control"
+                  value="<%= task.ApePaterno %>">
+                </div>
+                <div class="form-group">
+                  <label for="">Apellido Materno: </label>
+                  <input disabled type="text" placeholder="Apellido Materno" name="ApeMaterno" class="form-control"
+                  value="<%= task.ApeMaterno %>">
+                </div>
+                <div class="form-group">
+                  <label for="">Telefono: </label>
+                  <input type="tel" placeholder="Ingresa tu numero de telefono" name="telefono"
+                    class="form-control" value="<%= task.telefono %>">
+                </div>
+                <div class="form-group">
+                  <label for="">Dirección: </label>
+                  <input type="text" placeholder="Ingresa tu Dirección" name="Direccion"
+                    class="form-control" value="<%= task.Direccion %>">
+                </div>
+                <div class="card-header">
+                  <h3 class="text-center">Datos del Alumno</h3>
+                </div>
+                <div class="form-group">
+                  <label for="">Correo electronico: </label>
+                  <input type="email" placeholder="Ingresa tu correo electronico" name="Email" class="form-control"
+                  value="<%= task.Email %>">
+                </div>
+                <div class="form-group">
+                  <label for="">Cuatrimestre Actual: </label>
+                  <input type="text" placeholder="Ingresa tu Cuatrimestre Actual" name="CuatrimestreAct"
+                    class="form-control" value="<%= task.CuatrimestreAct %>">
+                </div>
+                <div class="card-header">
+                  <h3 class="text-center">Datos laborales</h3>
+                </div>
+                <div class="form-group">
+                  <label for="">Carrera:</label>
+                  <input disabled type="text" placeholder="NombreCarrera:" name="NombreCarrera" class="form-control"
+                  value="<%= task.NombreCarrera %>">
+                </div>
+                <ul class="pagination justify-content-center" role="tablist">
+                  <li class="nave-item"></li>
+                  
+                  <button type="submit" class="nav-link page-link">Actualizar</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% include partials/_footer%>
